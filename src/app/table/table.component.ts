@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AgGridAngular } from 'ag-grid-angular'; // Angular Data Grid Component
 import { ColDef, ITooltipParams } from 'ag-grid-community'; // Column Definition Type Interface
-import 'ag-grid-community/styles/ag-grid.css'; /* Core Data Grid CSS */
-import 'ag-grid-community/styles/ag-theme-quartz.css'; /* Quartz Theme Specific CSS */
+// import 'ag-grid-community/styles/ag-grid.css'; /* Core Data Grid CSS */
+// import 'ag-grid-community/styles/ag-theme-quartz.css'; /* Quartz Theme Specific CSS */
 import * as allJobRunsData from '../../../all_job_runs_prod.json'
 import * as allJobsData from '../../../all_jobs_prod.json'
 
