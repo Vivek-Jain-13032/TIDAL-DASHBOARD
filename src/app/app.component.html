@@ -1,0 +1,39 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">APOLLO | TIDAL - Jobs Overview</span>
+  </div>
+</nav>
+
+<br>
+
+<div class="container">
+
+  <!-- Status Overview Cards -->
+  <h6 class="title">Status Overview</h6>
+  <div class="row">
+    <div class="col" *ngFor="let card of cardsData">
+      <app-card [statusname]="card.statusname" [count]="card.count"></app-card>
+    </div>
+  </div>
+
+  <br>
+
+  <h6 class="title">Job Group Details</h6>
+  <div class="row">
+    <!-- Job Details Table -->
+    <div class="col-8">
+      <app-table [tableData]="tableData" (rowSelected)="selectedId($event)"></app-table>
+    </div>
+    <!-- Job Status Chart -->
+    <div class="col-4">
+      <app-stack-bar-chart [chartData] = "chartData" [selected_job_id]="selected_job_id"></app-stack-bar-chart>
+    </div>
+  </div>
+
+  <br>
+  
+  <h6 class="title">Job hierarchy</h6>
+  <app-hierarchy></app-hierarchy>
+
+</div>
+<!-- <router-outlet></router-outlet> -->

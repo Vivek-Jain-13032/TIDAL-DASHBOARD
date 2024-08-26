@@ -1,0 +1,14 @@
+<!-- <ag-grid-angular class="ag-theme-quartz" style="height: 300px;" [rowData]="all_job_runs_prod_data" [columnDefs]="colDefs"
+  [defaultColDef]="defaultColDef" /> -->
+
+  <ag-grid-angular
+  class="ag-theme-quartz"
+  style="height: 300px; width: 100%;"
+  [rowData]="tableData"
+  [columnDefs]="colDefs"
+  [defaultColDef]="defaultColDef"
+  (selectionChanged)="onRowSelectionChanged($event)"
+></ag-grid-angular>
+
+<!-- <div id="main" style="width: 600px;height:400px;"></div> -->
+ 
