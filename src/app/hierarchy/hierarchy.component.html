@@ -1,6 +1,60 @@
 <!-- Add buttons for Horizontal and Compact view -->
 <div class="chart-container" #chartContainer style="height: 100vh; background-color: #fffeff">
-    <button (click)="setHorizontalView()">Horizontal</button>
-    <button (click)="setCompactView()">Compact</button>
+    <div class="row">
+        <div class="col-5">
+            <button (click)="setHorizontalView()">Horizontal</button>
+            <button (click)="setCompactView()">Compact</button>
+        </div>
+        <div class="col-7 accordion-container">
+
+            <div class="dropdown" style="margin-left: 5rem">
+                <button style="background-color: #B34E36;" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    >
+                    Error - 1st
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">Completed Abnormally</li>
+                    <li class="dropdown-item">Error Occurred</li>
+                    <li class="dropdown-item">Timed Out</li>
+                    <li class="dropdown-item">Orphaned</li>
+                </ul>
+            </div>
+            <div class="dropdown ms-1">
+                <button style="background-color: #BCC0BA;" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="true">
+                    Other - 2nd
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">Aborted</li>
+                    <li class="dropdown-item">Active</li>
+                    <li class="dropdown-item">Cancelled</li>
+                    <li class="dropdown-item">Skipped</li>
+                </ul>
+            </div>
+            <div class="dropdown ms-1">
+                <button style="background-color: #006DCD;" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Waiting - 3rd
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">Waiting On Dependencies</li>
+                    <li class="dropdown-item">Waiting On Children</li>
+                    <li class="dropdown-item">Waiting On Group</li>
+                    <li class="dropdown-item">Waiting On Resource</li>
+                    <li class="dropdown-item">Launched</li>
+                    <li class="dropdown-item">Held</li>
+                    <li class="dropdown-item">Scheduled</li>
+                </ul>
+            </div>
+            <div class="dropdown ms-1">
+                <button style="background-color: #007D55;" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Completed - 4th
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">Completed Normally</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    
+</div>

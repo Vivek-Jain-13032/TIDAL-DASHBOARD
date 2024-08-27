@@ -12,7 +12,7 @@ import * as allJobRunsData from '../../../all_job_runs_prod.json'
 })
 export class HierarchyComponent implements OnInit, AfterViewInit {
   @ViewChild('chartContainer') chartContainer!: ElementRef;
-  private chart:any;
+  private chart: any;
 
   ngOnInit(): void {
     // Initialization code if needed
@@ -106,7 +106,7 @@ export class HierarchyComponent implements OnInit, AfterViewInit {
     const ids = new Set(data.map((node: any) => node.id));
     const parentIds = new Set(data.map((node: any) => node.parentid).filter(id => id != null));
     const rootIds = new Set(data.map((node: any) => node.rootid));
-  
+
     // Add the topmost parent node if it's missing
     rootIds.forEach(rootId => {
       if (!ids.has(rootId)) {
@@ -120,7 +120,7 @@ export class HierarchyComponent implements OnInit, AfterViewInit {
         ids.add(rootId); // Add the rootId to the set of ids
       }
     });
-  
+
     // Check for each node if its fullpath contains missing nodes
     data.forEach(node => {
       const parts = node.fullpath.split('\\').filter(Boolean); // Split and remove empty strings
@@ -139,13 +139,13 @@ export class HierarchyComponent implements OnInit, AfterViewInit {
         }
       }
     });
-  
+
     // console.log('Missing parent nodes added:');
     // console.log(data.filter(node => node.name === 'Missing Node' || node.name === 'Missing Root Node'));
     // console.log(data);
     return data;
   }
-  
+
 
   renderChart(processedData: any) {
     // Virtual root node to handle multiple root nodes
@@ -197,13 +197,12 @@ export class HierarchyComponent implements OnInit, AfterViewInit {
            <div style="padding:20px; padding-top:35px;text-align:center">
                <div style="color:#111672;font-size:16px;font-weight:bold"> ${d.data.name
           } </div>
-               <div style="color:#404040;font-size:16px;margin-top:4px"> ${d.data.statusname
-          } </div>
+               ${ d.data.statusname ? `<div style="color:#404040;font-size:16px;margin-top:4px"> ${d.data.statusname} </div>` : ''}
            </div> 
            
            <div style="display:flex;justify-content:center;padding-left:15px;padding-right:15px;">
-            <div > Calculated Status:  ${d.data.Calculated_Status}</div>     
-           </div>
+      ${d.data.Calculated_Status ? `<div> Calculated Status: ${d.data.Calculated_Status}</div>` : ''}
+     </div>
 
           </div>     
   </div>

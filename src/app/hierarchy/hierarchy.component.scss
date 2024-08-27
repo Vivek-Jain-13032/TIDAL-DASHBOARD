@@ -8,3 +8,16 @@
     box-sizing: border-box;
   }
   
+
+  
+.accordion-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.accordion-item {
+  flex: 1;
+  margin: 0 10px;
+  max-width: 300px;
+  /* Adjust as needed */
+}
